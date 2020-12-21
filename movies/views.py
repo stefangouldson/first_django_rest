@@ -8,4 +8,7 @@ from .models import MovieData
 class MovieViewSet(viewsets.ModelViewSet):
     queryset = MovieData.objects.all()
     serializer_class = MovieSerializer
-    # renderer = HTMLFormRenderer()
+    
+class ActionViewSet(viewsets.ModelViewSet):
+    queryset = MovieData.objects.filter(typ='action')
+    serializer_class = MovieSerializer
